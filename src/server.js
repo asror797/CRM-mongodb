@@ -4,6 +4,7 @@ const path = require('path')
 const app = express()
 const PORT = process.env.PORT || 5000
 const routes = require('./routers/routers')
+const {sign,verify} = require('jsonwebtoken')
 
 
 mongoose.connect('mongodb://localhost:27017/test')

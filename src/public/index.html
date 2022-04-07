@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <div class="dashboard">
+      <aside class="aside">
+         <img src="./img/State=Active.png" alt="">
+         <ul class="menu">
+            <li class="link" id="link1">
+               <a id="student" href="#students">
+                  <img src="./img/user.png" alt="">
+                  <p>Studnets</p>
+               </a>
+            </li>
+            <li class="link" id="link2">
+               <a id="group" href="#groups">
+                  <img src="./img/people.png" alt="">
+                  <p>Groups</p>
+               </a>
+            </li>
+            <li class="link" id="link3" >
+               <a id="teacher" href="#teachers">
+                  <img src="./img/groups.png" alt="">
+                  <p>Teachers</p>
+               </a>
+            </li>
+            <li class="link" id="link4">
+               <a id="course" href="#courses">
+                  <img src="./img/school.png" alt="">
+                  <p>Courses</p>
+               </a>
+            </li>
+         </ul>
+      </aside>
+      <div class="workboard">
+        <div class="header">
+            <p id="workboard">Dashboard</p>
+            <button  id="addItemBtn" class="addBtn">Add</button>
+        </div>
+        <div class="content">
+            <ul id="cards_box">
+            </ul>
+        </div>
+
+
+
+      </div>
+   </div>
+
+   <div class="modal">
+      <div class="modal-box">
+         <p>Are you sure ?</p>
+         <div class="modalBtn">
+            <button id="canselBtn" class="edit-btn">No</button>
+            <button id="delBtnMain" class="delete-btn">Yes</button>
+         </div>
+      </div>
+   </div>
+
+   <div class="addModal">
+      <div class="modal-card">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Title">
+            <input type="text" placeholder="Price">
+            <div class="btns-modal-main">
+               <button onclick="closeModal()" class="addBtnForm delete-btn">Cancel</button>
+               <button class="addBtnForm">Add Course</button>
+            </div>
+      </div>
+   </div>
+
+
+   <div class="editModal">
+      <div class="modal-card">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Title">
+            <input type="text" placeholder="Price">
+            <div class="btns-modal-main">
+               <button onclick="closeEditModal()" class="addBtnForm delete-btn">Cancel</button>
+               <button class="addBtnForm">Edit Course</button>
+            </div>
+      </div>
+   </div>
+
+   <div class="addStudent theModal">
+      <div class="modal-card">
+         <h1>Add Student</h1>
+         <input type="text" id="StudentNameModal" placeholder="First name">
+         <input type="text" id="StudentSurname" placeholder="Surname">
+         <input type="text" id="StudentPhoneNumber" placeholder="Phone Number">
+         <div class="btns-modal-main">
+            <button onclick="closeStudentModal()" class="addBtnForm delete-btn">Cancel</button>
+            <button onclick="addStudent()" class="addBtnForm">Add Student</button>
+         </div>
+      </div>
+   </div>
+   <div class="createGroup theModal">
+      <div class="modal-card">
+         <h1>Create Group</h1>
+         <input type="text" id="GroupName" placeholder="Group  name">
+         <input type="text" id="GroupTeacher" placeholder="Group teacher">
+         <input type="text" id="CourseType" placeholder="Course type">
+         <div class="btns-modal-main">
+            <button onclick="closeGroupModal()" class="addBtnForm delete-btn">Cancel</button>
+            <button onclick="createGroupBtn()" class="addBtnForm">Create Group</button>
+         </div>
+
+      </div>
+   </div>
+   <div class="addTeacher theModal">
+      <div class="modal-card">
+         <h1>Add Teacher</h1>
+         <input type="text" placeholder="First name">
+         <input type="text" placeholder="Surname">
+         <input type="text" placeholder="Phone Number">
+         <input type="text" placeholder="Stack">
+         <div class="btns-modal-main">
+            <button onclick="closeTeacherModal()" class="addBtnForm delete-btn">Cancel</button>
+            <button class="addBtnForm">Add Teacher</button>
+         </div>
+      </div>
+   </div>
+   <div class="createCourse theModal">
+      <div class="modal-card">
+         <h1>Create Course</h1>
+         <input type="text" placeholder="Course name">
+         <input type="text" placeholder="Title">
+         <input type="text" placeholder="Price">
+         <div class="btns-modal-main">
+            <button onclick="closeCourseModal()" class="addBtnForm delete-btn">Cancel</button>
+            <button class="addBtnForm">Create Course</button>
+         </div>
+      </div>
+   </div>
+
+
+   <template id="templateMain">
+         <li>
+            <img width="115" class="courseimg" src="./img/profile.png" alt="">
+            <div class="data_content">
+               <p class="coursename">Lorem, ipsum.</p>
+               <p class="coursetitle">mlemf kfmekm</p>
+               <p class="courseprice">55454 so'm</p>
+            </div>
+            <div class="data__btns">
+               <button onclick="openModal(this)" class="delete-btn">Delete</button>
+               <button onclick="openEditModal()" class="edit-btn">Edit</button>
+            </div>
+         </li>
+   </template>
+   
+   <script src="./scripts/main.js"></script>
+</body>
+</html>
